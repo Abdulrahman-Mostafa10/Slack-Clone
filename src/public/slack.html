@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Chat Application</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="namespaces">
+          <!-- Added within the script -->
+        </div>
+        <div class="rooms">
+          <div class="main-rooms">
+            <h6 class="pointer">
+              <i class="room-caret fa-solid fa-caret-down"></i>Rooms
+            </h6>
+            <ul class="room-list">
+              <!-- Added within the script -->
+            </ul>
+          </div>
+          <div class="dm">
+            <h6 class="pointer">
+              <i class="room-caret fa-solid fa-caret-down"></i>Direct Messages
+            </h6>
+            <ul class="room-list">
+              <li><span class="glyphicon glyphicon-lock"></span>Main Room</li>
+              <li>
+                <span class="glyphicon glyphicon-globe"></span>Meeting Room
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="chat-panel col">
+          <div class="room-header row col-12">
+            <div class="col">
+              <span class="curr-room-text"></span>
+              <span class="curr-room-num-users"></span>
+            </div>
+            <div class="search">
+              <span class="glyphicon glyphicon-search"></span>
+              <input type="text" id="search-box" placeholder="Search" />
+            </div>
+          </div>
+          <div class="message-form">
+            <form id="message-form">
+              <div class="col-sm-12">
+                <input
+                  id="user-message"
+                  type="text"
+                  placeholder="Enter your message"
+                />
+              </div>
+            </form>
+          </div>
+          <ul id="messages" class="col-sm-12"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/buildMessage.js" defer></script>
+    <script src="/joinRoom.js" defer></script>
+    <script src="/joinNameSpace.js" defer></script>
+    <script src="/scripts.js" defer></script>
+  </body>
+</html>
